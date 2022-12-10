@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Form Builder UI
+This UI Allow the users to manage their forms
 
-## Getting Started
+Build with NextJS. Has:
+1. Default ESLint configuration
 
-First, run the development server:
+## Description
+[Next](https://github.com/vercel/next.js/) framework TypeScript starter repository.
 
-```bash
-npm run dev
-# or
-yarn dev
+## Setup the repository locally:
+
+```
+git clone https://github.com/Afreeca/social-wall-app
+cd social-wall/web
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+# Installs all dependencies
+$ npm i
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Running the app
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+# development
+$ npm run dev
+```
+## Debugging the app
 
-## Learn More
+### Visual Studio Code
+1. Open Visual Studio Code terminal
+1. Create a new terminal of type `JavaScript Debug Terminal`
+1. Execute `npm run dev`
+1. Give it a second and you should be in debug mode 🎉
 
-To learn more about Next.js, take a look at the following resources:
+## Test
+Tests not implemented
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Author
+Adilson Mendes

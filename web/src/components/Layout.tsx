@@ -2,11 +2,10 @@ import { AppBar, Box, Container, Stack, Toolbar, Typography } from '@mui/materia
 import { FC, ReactNode } from 'react'
 
 interface LayoutProps {
-  pageTitle: string
   children: ReactNode
 }
 
-export const Layout: FC<LayoutProps> = ({ pageTitle, children }) => {
+export const Layout: FC<LayoutProps> = ({ children }) => {
     return (
       <Container fixed >
         <Stack sx={{ bgcolor: '#ececec', height: '100vh'}} gap={5}>

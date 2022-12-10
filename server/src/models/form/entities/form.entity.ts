@@ -18,24 +18,39 @@ export class FormContent {
   @Field()
   component: string
 
-  @Field(() => Styles)
-  styles?: Styles
+  @Field(() => [Styles])
+  styles?: Styles[]
 
   @Field({ nullable: true })
   className?: string
 
-  @Field(() => [FormContent], { nullable: true })
-  Children?: FormContent[]
+  @Field({ nullable: true })
+  type?: string
+
+  @Field({ nullable: true })
+  name?: string
+
+  @Field({ nullable: true })
+  for?: string
+
+  @Field(() => [FormContent], { nullable: 'itemsAndList' })
+  children?: FormContent[] | string
 }
 
 @ObjectType()
 export class Form {
   @Field()
   id: string
+
+  @Field()
+  name: string
+
   @Field(() => User)
   customer: User
+
   @Field(() => User)
   autor: User
+
   @Field(() => GraphQLJSON)
   content: FormContent
 }

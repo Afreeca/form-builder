@@ -23,8 +23,7 @@ export class FormResolver {
   }
 
   @Mutation(() => Form, { name: 'deleteForm' })
-  delete(@Args('formId') emoployeeId: string): boolean {
-    const test = this.formService.deleteFormById(emoployeeId)
-    return test
+  delete(@Args('formId') emoployeeId: string) {
+    return this.formService.deleteFormById(emoployeeId)
   }
 }

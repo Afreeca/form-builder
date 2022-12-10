@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 export const LeftLandingPanel = () => {
   const router = useRouter()
-  const handleGoToDashboard = () =>  router.push(`dashbord/`)
+  const handleGoToDashboard = () =>  router.push(`dashboard/`)
 
   return (
     <Box

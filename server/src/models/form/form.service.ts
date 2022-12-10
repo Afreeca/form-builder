@@ -25,8 +25,9 @@ export class FormService {
     return this.formRepo.create(user)
   }
 
-  deleteFormById(formId: string): boolean {
+  deleteFormById(formId: string): Form {
     const deletedForm = this.formRepo.delete(formId)
+
     if (!deletedForm) {
       throw new ObjectNotFoundException(OBJECT_TYPE, formId)
     }

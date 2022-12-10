@@ -7,8 +7,13 @@ import { FormContent } from '../entities/form.entity'
 export class CreateFormDto {
   @Field(() => User)
   customer: User
+
   @Field(() => User)
   autor: User
+
+  @Field()
+  name: string
+
   @Field(() => GraphQLJSON)
   content: FormContent
 }

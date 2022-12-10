@@ -20,12 +20,15 @@ export class FormRepository {
     return formList.find((form) => form.id === userId)
   }
 
-  delete(formId: string): boolean | null {
+  delete(formId: string): Form | null {
     const formIndex = formList.findIndex((form) => form.id === formId)
+
+    const returnObject = formList[formIndex]
+
     if (formIndex === -1) {
       return null
     }
     formList.splice(formIndex, 1)
-    return true
+    return returnObject
   }
 }

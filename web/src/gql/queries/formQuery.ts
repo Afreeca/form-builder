@@ -14,13 +14,17 @@ export type Styles = {
 export type FormContent = {
   id: string
   component: string
-  styles?: Styles
+  styles?: Styles[]
+  type?: string
+  name?: string
+  for?: string
   className: string
-  Children?: FormContent[]
+  children?: FormContent[] | string
 }
 
 export type Form = {
   id: string
+  name: string
   customer: User
   autor: User
   content: FormContent
@@ -35,12 +39,36 @@ ${FORM_FIELDS_FRAGMENT}
   }
 `
 
-export const useForm = () => {
-  const { loading, error, data } = useQuery<Form[]>(GET_FORMS)
+export const GET_FORM = gql`
+${FORM_FIELDS_FRAGMENT}
+  query getForm($formId: String!) {
+    form(formId: $formId){
+        ...formFields
+        content
+    }
+  }
+`
+
+export const useForms = () => {
+  const { loading, error, data } = useQuery<{forms:Form[]}>(GET_FORMS)
 
   return {
     error: error,
     loading: loading,
-    forms: data,
+    forms: data?.forms || [],
+  }
+}
+
+
+export const useForm = (formId: string) => {
+  const { loading, error, data } = useQuery<{form:Form}>(GET_FORM, {
+    variables: { formId }
+  })
+
+
+  return {
+    error: error,
+    loading: loading,
+    form: data?.form,
   }
 }
